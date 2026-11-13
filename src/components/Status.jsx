@@ -1,0 +1,2 @@
+const C={New:'bg-slate-100 text-slate-700','Assigned':'bg-sky-100 text-sky-800','In Progress':'bg-amber-100 text-amber-800','Job Done':'bg-emerald-100 text-emerald-800',Reviewed:'bg-violet-100 text-violet-800',Closed:'bg-slate-800 text-white'};
+export default function Status({s}){return <span className={`text-xs font-semibold px-2.5 py-1 rounded-full whitespace-nowrap ${C[s]||C.New}`}>{s}</span>}

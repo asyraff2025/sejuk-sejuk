@@ -1,7 +1,7 @@
-import {TECHS,rm,weekStart} from '../lib/helpers';
-export default function KpiDashboard({orders}){
+import {rm,weekStart} from '../lib/helpers';
+export default function KpiDashboard({orders,techs}){
  const ws=weekStart(),done=orders.filter(o=>o.completions&&new Date(o.completions.completed_at)>=ws);
- const k=TECHS.map(t=>{const j=done.filter(o=>o.completions.technician===t);return {t,n:j.length,amt:j.reduce((s,o)=>s+o.completions.final_amount,0),pp:orders.filter(o=>o.technician===t).reduce((s,o)=>s+o.postponed,0)}});
+ const k=techs.map(({name:t})=>{const j=done.filter(o=>o.completions.technician===t);return {t,n:j.length,amt:j.reduce((s,o)=>s+o.completions.final_amount,0),pp:orders.filter(o=>o.technician===t).reduce((s,o)=>s+o.postponed,0)}});
  const mx=Math.max(1,...k.map(x=>x.n));
  return <>
   <div className="grid grid-cols-3 gap-2 mb-3">{[['Done this week',done.length],['Awaiting review',orders.filter(o=>o.status==='Job Done').length],['Postponed',k.reduce((s,x)=>s+x.pp,0)]].map(([l,v])=><div key={l} className="card !mb-0 text-center"><b className="text-2xl block">{v}</b><span className="text-sm text-slate-500">{l}</span></div>)}</div>
