@@ -1,0 +1,9 @@
+@tailwind base;@tailwind components;@tailwind utilities;
+@layer components{
+ .card{@apply bg-white border border-slate-200 rounded-xl p-3 mb-3 shadow-sm}
+ .inp{@apply w-full border border-slate-300 rounded-lg p-2.5 bg-white text-slate-900}
+ .lbl{@apply block text-sm text-slate-500 mt-2 mb-1}
+ .btn{@apply inline-block bg-sky-700 text-white font-semibold rounded-lg px-4 py-2.5 mt-2 mr-2 disabled:opacity-50}
+ .btn-alt{@apply bg-slate-100 text-slate-800}.btn-wa{@apply bg-green-600}
+ .chip{@apply text-xs px-2 py-0.5 rounded-full bg-sky-100 text-sky-900}.chip-flag{@apply bg-red-50 text-red-700 border border-red-300}}
+body{@apply bg-slate-50 text-slate-900}
