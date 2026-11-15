@@ -1,5 +1,5 @@
 import {useState} from 'react';import {login} from '../lib/api';import Logo from './Logo';
-const DEMO=[['Manager','manager','manager123'],['Admin','admin','admin123'],['Ali','ali','ali123'],['John','john','john123'],['Bala','bala','bala123']];
+const DEMO=[['Manager','manager','manager123'],['Admin','admin','admin123'],['Damia','damia','damia123'],['Hakim','hakim','hakim123'],['Shime','shime','shime123']];
 export default function Login({onLogin}){
  const [id,setId]=useState(''),[pw,setPw]=useState(''),[show,setShow]=useState(false),[msg,setMsg]=useState(''),[busy,setBusy]=useState(false);
  const go=async()=>{if(!id||!pw)return setMsg('Enter your ID and password.');setBusy(true);setMsg('');
